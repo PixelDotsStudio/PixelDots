@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navigation Page</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-image: url('websiteBg.jpg'); /* 替换为你的背景图路径 */
+            background-size: cover;
+            background-position: top;
+        }
+        #content {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            z-index: 1;
+        }
+        #content p {
+            font-size: 40px;
+            color: black; /* 修改为你希望的文字颜色 */
+        }
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 10px 0;
+            text-align: center;
+            z-index: 2;
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            padding-bottom: 5px;
+            border-bottom: 2px solid transparent;
+            transition: border-color 0.3s ease;
+        }
+        nav ul li a:hover {
+            border-color: white;
+        }
+        nav ul li a.active {
+            color: yellow; /* 修改为你希望的选中状态颜色 */
+            border-color: yellow; /* 修改为你希望的选中状态颜色 */
+        }
+        footer {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 10px 0;
+            text-align: center;
+            color: white;
+            z-index: 2;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="#" onclick="showContent('home')" class="active">Home</a></li>
+            <li><a href="#" onclick="showContent('privacy')">Privacy Policy</a></li>
+            <li><a href="#" onclick="showContent('term')">Term of Use</a></li>
+            <li><a href="#" onclick="showContent('connect')">Connect Us</a></li>
+        </ul>
+    </nav>
+    <div id="content">
+        <p id="homeContent">Welcome to Home Page</p>
+        <p id="privacyContent" style="display:none;">Welcome to Privacy Policy Page</p>
+        <p id="termContent" style="display:none;">Welcome to Term of Use Page</p>
+        <p id="connectContent" style="display:none;">Welcome to Connect Us Page</p>
+    </div>
+    <footer>
+        Company Information | Contact: example@example.com
+    </footer>
+
+    <script>
+        function showContent(page) {
+            var pages = ['home', 'privacy', 'term', 'connect'];
+            for (var i = 0; i < pages.length; i++) {
+                var content = document.getElementById(pages[i] + 'Content');
+                var link = document.querySelector('a[href="#"][onclick="showContent(\'' + pages[i] + '\')"]');
+                if (pages[i] === page) {
+                    content.style.display = 'block';
+                    link.classList.add('active');
+                } else {
+                    content.style.display = 'none';
+                    link.classList.remove('active');
+                }
+            }
+        }
+    </script>
+</body>
+</html>
