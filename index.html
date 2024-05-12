@@ -1,32 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pixel Dots Studio</title>
     <style>
+        /* your CSS styles here */
         body {
             margin: 0;
             padding: 0;
             font-family: Arial, sans-serif;
-            background-image: url('websiteBg.jpg'); /* 替换为你的背景图路径 */
+            background-image: url('websiteBg.jpg');
+            /* 替换为你的背景图路径 */
             background-size: cover;
             background-position: top;
+            overflow: hidden;
+            /* 防止内容超出窗口部分显示 */
+            position: relative;
         }
-        #content {
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            text-align: center;
-            z-index: 1;
-        }
-        #content p {
-            font-size: 40px;
-            color: black; /* 修改为你希望的文字颜色 */
-        }
+
         nav {
-            position: fixed;
+            position: absolute;
             top: 0;
             left: 0;
             width: 100%;
@@ -34,76 +29,224 @@
             padding: 10px 0;
             text-align: center;
             z-index: 2;
+            border-bottom: 2px solid white;
+            /* 底框样式 */
         }
+
         nav ul {
             list-style-type: none;
             padding: 0;
             margin: 0;
         }
+
         nav ul li {
             display: inline;
             margin-right: 20px;
         }
+
         nav ul li a {
             color: white;
             text-decoration: none;
             padding-bottom: 5px;
-            border-bottom: 2px solid transparent;
             transition: border-color 0.3s ease;
         }
+
         nav ul li a:hover {
             border-color: white;
         }
-        nav ul li a.active {
-            color: yellow; /* 修改为你希望的选中状态颜色 */
-            border-color: yellow; /* 修改为你希望的选中状态颜色 */
+
+        .tab-content {
+            display: none;
+            padding: 20px;
+            overflow-y: auto;
+            height: calc(100vh - 40px);
+            /* Adjust height as needed */
+            color: white;
         }
+
+        .tab-content.active {
+            display: block;
+        }
+
         footer {
-            position: fixed;
+            position: absolute;
             bottom: 0;
             width: 100%;
             background-color: rgba(0, 0, 0, 0.5);
+            color: white;
             padding: 10px 0;
             text-align: center;
-            color: white;
             z-index: 2;
         }
     </style>
 </head>
+
 <body>
     <nav>
         <ul>
-            <li><a href="#" onclick="showContent('home')" class="active">Home</a></li>
-            <li><a href="#" onclick="showContent('privacy')">Privacy Policy</a></li>
-            <li><a href="#" onclick="showContent('term')">Term of Use</a></li>
-            <li><a href="#" onclick="showContent('connect')">Connect Us</a></li>
+            <li><a href="#home" class="tab-link">Home</a></li>
+            <li><a href="#privacy" class="tab-link">Privacy Policy</a></li>
+            <li><a href="#term" class="tab-link">Term of Use</a></li>
+            <li><a href="#connect" class="tab-link">Connect Us</a></li>
         </ul>
     </nav>
-    <div id="content">
-        <p id="homeContent">Welcome to Home Page</p>
-        <p id="privacyContent" style="display:none;">Welcome to Privacy Policy Page</p>
-        <p id="termContent" style="display:none;">Welcome to Term of Use Page</p>
-        <p id="connectContent" style="display:none;">Welcome to Connect Us Page</p>
+    <div id="home" class="tab-content active">
+        <h2></h2>
+        <p>Welcome to our home page. This is where you'll find all the latest news and updates about Pixel Dots Studio.
+        </p>
     </div>
+    <div id="privacy" class="tab-content">
+        <h2> </h2>
+        <h1>Our Privacy Commitment</h1>
+
+        <p>Pixel Dots Studios (hereinafter referred to as "Pixel Dots," "we," or "our"), located in Hong Kong, is a
+            developer and publisher of mobile device games. We respect your privacy and are committed to protecting your
+            personal information by adopting industry-recognized security measures to prevent data loss, misuse, or
+            alteration in our systems. This Privacy Policy is intended to describe how we collect, protect, maintain,
+            and share personal information of users and visitors when such information is collected on our website or
+            applications.</p>
+
+        <h2>Scope of the Privacy Policy</h2>
+
+        <p>This Privacy Policy covers the collection, use, storage, and disclosure of personal information collected
+            when you access the Pixel Dots website ("Website"), when you order, download, and/or use our games and
+            mobile applications ("Applications"), and any information shared by Pixel Dots' business partners with Pixel
+            Dots ("Services").</p>
+
+        <p>Our Services may contain links or portions of content linking to other websites or services. When you leave
+            our Services or view portions of content from third-party websites or services through our Services, we
+            recommend that you read the privacy policies of those websites or third-party services. Pixel Dots is not
+            responsible for the privacy practices or content of other websites or services.</p>
+
+        <p>Please read this Privacy Policy carefully before using our Services. If you do not wish for Pixel Dots to
+            collect, use, store, or disclose your personal information as described in this Privacy Policy, you may not
+            use our Website or applications.</p>
+
+        <h2>Information Collection and Use</h2>
+
+        <p>Pixel Dots collects different types of information from you to provide the best products and user experience
+            and to operate effectively. Some information is provided directly by you, while some may be collected
+            automatically, especially by observing how you interact with our services. In general, we may receive your
+            personal information in the following ways:</p>
+
+        <h3>Information Provided Directly by You</h3>
+
+        <p>When you register for our sponsored events, complete forms requesting information, submit support queries,
+            contact us for employment inquiries, or participate in our sponsored blogs and online communities, we
+            receive information from you to facilitate your requests.</p>
+
+        <h3>Information Provided by Third Parties when Downloading Applications</h3>
+
+        <p>When you download applications, we may access certain information based on the permissions granted by the
+            application store provider (such as the Apple App Store or Google Play). Generally, this information is
+            related to orders and includes order numbers, purchased games, and other relevant information. When
+            necessary, the application store provider may allow us to access certain additional information related to
+            orders to respond to support queries. Typically, this is limited to the email address you have provided to
+            us so we can respond to your support requests. By using third-party social networks (such as Facebook or
+            Game Center) to access services or by other means when personal information is necessary for your use and/or
+            participation, your personal information may also be provided to Pixel Dots. Please note that by using Pixel
+            Dots applications via third-party social networks or other third-party platforms or services ("Third-Party
+            Social Networks"), or by connecting to Third-Party Social Networks through applications, you authorize us to
+            collect, store, and use any and all information as described in this Privacy Policy, and you agree that the
+            Third-Party Social Networks may provide us with information based on the settings or preferences available
+            to you on those Third-Party Social Networks.</p>
+
+        <h3>Indirectly Provided Information</h3>
+
+        <p>When you use our Services, we also collect information indirectly from you. We may collect information
+            automatically through the Services, which may include your IP address, device type, unique device
+            identifiers, browser type, general geographic location (such as country or city-level location), device
+            serial number or MAC address, open device identifiers (UDID), and other related technical information. We
+            may also collect information about how your device interacts with our website, including pages visited and
+            links clicked. Collecting this information allows us to better understand visitors to our website, where
+            they come from, and which content on our website interests them. We use this information for internal
+            analytical purposes and to improve the quality and relevance of our website to our visitors.</p>
+
+        <p>When using our applications, our servers may automatically record certain information related to your use of
+            the application, such as links and advertisements clicked on our mobile applications, times of interaction
+            with the application, and other statistical information. We aggregate this information to analyze all
+            application users and use this information to manage our applications, expand features based on our users'
+            needs and preferences, and improve the functionality of the applications.</p>
+
+        <p>When using our Services, certain information may also be collected using cookies and similar tracking
+            technologies, as described in our Cookie Policy.</p>
+
+        <p>We also receive your personal information from our analytics and advertising partners, as outlined in this
+            Privacy Policy.</p>
+
+        <h2>How We Use Your Personal Information</h2>
+
+        <p>We do not sell, rent, lease, trade, or share your personal information with any third party unless described
+            in this Privacy Policy. The primary purpose of collecting information from you is to provide you with the
+            services you request. Your personal information will not be shared with third parties unaffiliated with
+            Pixel Dots unless we obtain your explicit permission or unless we have other legal obligations.</p>
+
+        <p>Personal information of application users, such as names, contact information, usernames, and passwords, is
+            stored by our third-party market partners (such as Apple and Google). Any information we share is secure and
+            used only to assist you in accessing your account according to agreements with the relevant third-party
+            market partners. Except as described in this Privacy Policy, we do not share this information outside of
+            Pixel Dots. We may share information about your use of our applications with trusted third parties to enable
+            us to improve features and/or services requested by you.</p>
+
+        <h2>Analytics Metrics and Other Technologies</h2>
+
+        <p>Our services may include third-party tracking tools from our service providers, such as Google Analytics.
+            These third parties may use cookies, APIs, and/or SDKs in our services to collect and analyze user
+            information on our behalf. Third parties may have access to information such as your device identifiers, MAC
+            addresses, IMEIs, language settings (specific locations for specific languages), geographic location
+            information, and IP addresses. We use analytics information to support business analysis and operations,
+            business intelligence, product development, improvement of products and services, personalized content,
+            advertising, and recommendations. These third-party tracking tools may also use a technology called
+            conversion tracking. We use conversion tracking to assess the quality of advertising campaigns we are
+            running to promote Pixel Dots products. For example, you may see our mobile applications advertised in other
+            services. Clicking on these advertisements and installing our applications allows us to verify installations
+            and share device identifiers with applicable third-party advertisers. You can view a non-exclusive list of
+            analytics companies operating through these technologies in our applications by
+    </div>
+    <div id="term" class="tab-content">
+        <h2> </h2>
+        <p>These terms of use govern your use of Pixel Dots Studio's website. By accessing this website, you agree to be
+            bound by these terms.</p>
+    </div>
+    <div id="connect" class="tab-content">
+        <h2> </h2>
+        <p>Have questions or feedback? Feel free to reach out to us via email at pixeldots2024@gmail.com. We'd love to
+            hear from you!</p>
+    </div>
+
     <footer>
-        Company Information | Contact: example@example.com
+        Pixel Dots Studio | Contact: pixeldots2024@gmail.com
     </footer>
 
     <script>
-        function showContent(page) {
-            var pages = ['home', 'privacy', 'term', 'connect'];
-            for (var i = 0; i < pages.length; i++) {
-                var content = document.getElementById(pages[i] + 'Content');
-                var link = document.querySelector('a[href="#"][onclick="showContent(\'' + pages[i] + '\')"]');
-                if (pages[i] === page) {
-                    content.style.display = 'block';
-                    link.classList.add('active');
-                } else {
-                    content.style.display = 'none';
-                    link.classList.remove('active');
-                }
-            }
-        }
+        // 获取所有标签页链接
+        const tabLinks = document.querySelectorAll('.tab-link');
+
+        // 获取所有标签页内容
+        const tabContents = document.querySelectorAll('.tab-content');
+
+        // 为每个链接添加点击事件监听器
+        tabLinks.forEach(link => {
+            link.addEventListener('click', function (e) {
+                e.preventDefault(); // 阻止默认链接行为
+
+                // 隐藏所有标签页内容
+                tabContents.forEach(content => {
+                    content.classList.remove('active');
+                });
+
+                // 获取目标标签页的ID
+                const target = this.getAttribute('href').substring(1);
+
+                // 显示目标标签页内容
+                const targetContent = document.getElementById(target);
+                targetContent.classList.add('active');
+
+                // 更新地址栏
+                window.history.pushState({}, '', '#' + target);
+            });
+        });
     </script>
 </body>
+
 </html>
